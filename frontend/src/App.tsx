@@ -1,20 +1,9 @@
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
+import { BackendChecker } from './components/backend_checker/BackendChecker';
 
 function App() {
-  async function checkBackendConnection() {
-    const pulseUrl = `${import.meta.env.VITE_BACKEND_URL}/pulse`;
-    try {
-      const result = await fetch(pulseUrl);
-      const content = await result.json();
-      alert(content.msg);
-    } catch (e) {
-      alert('Backend not found.');
-      console.error(e);
-    }
-  }
-
   return (
     <>
       <div>
@@ -27,9 +16,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={checkBackendConnection}>
-          Check backend connection
-        </button>
+        <BackendChecker />
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
