@@ -1,5 +1,5 @@
-const express = require('express');
-const cors = require('cors');
+import express from 'express';
+import cors from 'cors';
 
 const port = process.env.PORT || 8080;
 const app = express();
@@ -15,3 +15,5 @@ app.get('/pulse', (_req, res) => {
 
 app.listen(port);
 console.log(`Server listening on port ${port}`);
+
+export { app };
