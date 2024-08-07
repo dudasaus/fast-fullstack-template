@@ -1,0 +1,26 @@
+/** Common styles, functions, and mixins. */
+@use 'sass:math';
+@use 'sass:map';
+
+/**
+ * Device independent pixels. See
+ * https://en.wikipedia.org/wiki/Device-independent_pixel
+ */
+@function dp($pixels) {
+  @return math.div($pixels * 1rem, 16);
+}
+
+$mobile-xsmall: 540px;
+$mobile-small: 767px;
+$mobile-large: 992px;
+
+@mixin respond-to($breakpoint) {
+  @media (max-width: #{$breakpoint}) {
+    @content;
+  }
+}
+
+/** This will also darken with negative amounts. */
+@function lighten($color, $amount) {
+  @return lch(from $color calc(l + $amount) c h);
+}

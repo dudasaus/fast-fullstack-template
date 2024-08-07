@@ -1,0 +1,13 @@
+:root {
+  --color-background: $white;
+  --color-text: $black;
+}
+
+$background: var(--color-background);
+$text: var(--color-text);
+
+$grey: #a6a6a6;
+$white: #f9f9f9;
+$black: #111;
+$shadow: rgba(#000, 0.3);
+$scrim: rgba(#000, 0.6);
